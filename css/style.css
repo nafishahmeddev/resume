@@ -1,0 +1,85 @@
+@import "xpeed.css";
+@import "normalize.css";
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+:root{
+    --color-primary: #449963;
+    --color-secondary: #292B35;
+    font-family: 'Lato', sans-serif;
+}
+html{
+    font-size: var(--text-m);
+    font-weight: 400;
+    line-height: 2rem;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.color-primary{
+    color: var(--color-primary);
+}
+
+.color-secondary{
+    color: var(--color-secondary);
+}
+.color-muted{
+    color: #666;
+}
+a[href]{
+    color: var(--color-primary);
+}
+
+section{
+    display: grid;
+    grid-template-columns: 290px 1px auto;
+    padding: 20px;
+    grid-gap: 20px;
+}
+section > aside:nth-child(1){
+    padding-right: 20px;
+    display: block;
+
+}
+
+section > div{
+    border-right: 1px solid var(--color-primary);
+}
+section > aside:nth-last-child(1){
+
+}
+section > aside:nth-child(1) .block{
+    margin-top: 35px;
+}
+
+section > aside:nth-last-child(1) .block{
+    margin-bottom: 35px;
+}
+section > aside:nth-last-child(1) .block > h2{
+    display: flex;
+    align-items: flex-start;
+}
+section > aside:nth-last-child(1) .block > h2 >  i{
+    margin-right: 12px;
+}
+section > aside:nth-last-child(1) .block .content{
+    padding-left: 30px;
+}
+
+section > aside:nth-last-child(1) .block ul{
+    padding-left: 15px;
+}
+
+
+.round-box{
+    display: inline-block;
+    height: 13px;
+    width: 13px;
+    background-color: #666;
+    vertical-align: middle;
+    border-radius: 100%;
+}
+.round-box.checked{
+    background-color: var(--color-primary);
+}

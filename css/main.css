@@ -10,6 +10,10 @@
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
+:root{
+  --color-primary: #449963;
+  --color-secondary: #292B35;
+}
 *{
   box-sizing: border-box;
 }
@@ -32,16 +36,17 @@ table{
   margin-top: 0;
 }
 section{
-  border: 1px solid #e5e5e5;
+  border: 1px solid var(--color-primary);
   margin-top: 15px;
   border-radius: 3px;
 
 }
 section header{
-  background-color: #e5e5e5;
+  background-color: var(--color-primary);
   padding: 5px 15px;
   font-size: 15px;
   font-weight: 600;
+  color: white;
 }
 section content{
   padding: 10px 15px;
@@ -49,9 +54,11 @@ section content{
 }
 section content > h4{
   margin: 5px 0 0px 0;
+  color: var(--color-primary);
 }
 section content > span{
   font-size: 12px;
+  color: var(--color-secondary);
 }
 
 section > .qualification-table{
@@ -68,12 +75,24 @@ section > .qualification-table tr th:not(:nth-last-child(1)){
   text-align: left;
   padding: 2px 10px;
 }
-section > content > ul{padding-left: 15px;
-  list-style-type: "\25C8";
+section > content > ul{
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
 }
 section > content > ul > li {
   margin-bottom: 10px;
-  padding-left: 10px;
+  padding-left: 25px;
+  position: relative;
+
+}
+section > content > ul > li:before{
+  content: "\25C8";
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--color-primary);
+  margin-right: 10px;
 }
 
 section > table:not(.qualification-table){
@@ -83,12 +102,12 @@ section >  table td{
   padding:3px 15px;
 }
 section >  table:not(.qualification-table) td:nth-child(1){
-  color: #444;
+  color: var(--color-secondary);
 }
 
 hr{
   border: 0px;
-  border-top: 1px  solid #e5e5e5;
+  border-top: 1px  solid var(--color-primary);
   height: 0;
 }
 

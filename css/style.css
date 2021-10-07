@@ -11,6 +11,7 @@ html{
     font-size: var(--text-m);
     font-weight: 400;
     line-height: 2rem;
+    min-height: 100%;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -30,25 +31,36 @@ h1, h2, h3, h4, h5, h6{
 a[href]{
     color: var(--color-primary);
 }
-
+body{
+    min-height: 100%;
+    background-color: #e5e5e5;
+    padding: 80px;
+}
+.name{
+    font-size: 33px;
+}
 section{
-    display: grid;
-    grid-template-columns: 290px 1px auto;
-    padding: 20px;
-    grid-gap: 20px;
+    display: flex;
+    max-width: 1000px;
+    min-width: 1000px;
+    margin: auto;
+    background-color: white;
+    min-height: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #e5e5e5;
+}
+section > aside{
+    padding: 50px;
+
 }
 section > aside:nth-child(1){
-    padding-right: 20px;
     display: block;
-
+    flex: 1;
+    min-width: 250px;
+    background-color: #f6f5f5;
 }
 
-section > div{
-    border-right: 1px solid var(--color-primary);
-}
-section > aside:nth-last-child(1){
-
-}
 section > aside:nth-child(1) .block{
     margin-top: 35px;
 }
@@ -68,18 +80,76 @@ section > aside:nth-last-child(1) .block .content{
 }
 
 section > aside:nth-last-child(1) .block ul{
-    padding-left: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+section > aside:nth-last-child(1) .block ul li {
+    padding-left: 25px;
+    margin-top: 10px;
+    text-indent: -19px;
 }
 
+section > aside:nth-last-child(1) .block ul li::before {
+    content: "•";
+    color: var(--color-primary); /* or whatever color you prefer */
+    margin-right: 10px;
+}
 
 .round-box{
     display: inline-block;
-    height: 12px;
-    width: 12px;
+    height: 10px;
+    width: 10px;
     background-color: #666;
     vertical-align: middle;
     border-radius: 100%;
 }
 .round-box.checked{
     background-color: var(--color-primary);
+}
+
+.print-button{
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50px);
+    display: block;
+    padding: 10px 20px;
+    background-color: var(--color-primary);
+    min-width: 100px;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    border-radius: 0 0 10px 10px;
+    cursor: pointer;
+}
+.print-button:hover{
+    background-color: #1a5d33;
+}
+.print-button:active{
+    background-color: #2c6742;
+    cursor: grab;
+}
+.print-button i{
+    margin-right: 10px;
+
+}
+@media print {
+    body{
+        padding: 0;
+        background-color: white;
+    }
+    section{
+        border-radius: 0;
+        border: 0;
+        max-width: 100%;
+        min-width: 100%;
+    }
+    .print-button{
+        display: none;
+    }
+    @page  {
+        margin: 0;
+        size:10.4in 12.35in;
+    }
 }

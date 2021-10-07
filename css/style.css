@@ -74,8 +74,8 @@ section > aside:nth-last-child(1) .block ul{
 
 .round-box{
     display: inline-block;
-    height: 13px;
-    width: 13px;
+    height: 12px;
+    width: 12px;
     background-color: #666;
     vertical-align: middle;
     border-radius: 100%;
